@@ -1,21 +1,18 @@
 <?php
 
-/**
- * This component provides a automatic refreshing of a gridfield at a particular interval, or manual refreshing with
- * a "refresh" button {@link GridField}
- *
- * @package GridFieldAjaxRefresh
- */
-namespace GridFieldAjaxRefresh;
+namespace Silverstripe\GridfieldAjaxRefresh\Forms\GridField;
 
 use SilverStripe\Forms\GridField\GridField;
 use SilverStripe\Forms\GridField\GridField_HTMLProvider;
 use SilverStripe\View\ArrayData;
 use SilverStripe\View\Requirements;
 
+/**
+ * This component provides a automatic refreshing of a gridfield at a particular interval, or manual refreshing with
+ * a "refresh" button {@link GridField}
+ */
 class GridFieldAjaxRefresh implements GridField_HTMLProvider
 {
-
     private static $auto_refresh_enabled = false;
     private static $auto_refresh_interval = 180000; // 180000 = 3 min
 
@@ -45,20 +42,26 @@ class GridFieldAjaxRefresh implements GridField_HTMLProvider
      */
     public function getHTMLFragments($gridField)
     {
-        Requirements::css('gridfieldajaxrefresh/css/GridFieldAjaxRefresh.css');
-        Requirements::javascript('gridfieldajaxrefresh/javascript/GridFieldAjaxRefresh.js');
+        Requirements::css(
+            'silverstripe/gridfieldajaxrefresh:client/dist/css/GridFieldAjaxRefresh.css'
+        );
+        Requirements::javascript(
+            'silverstripe/gridfieldajaxrefresh:client/dist/javascript/GridFieldAjaxRefresh.min.js'
+        );
 
-        $data = array('RefreshDelay' => $this->refreshDelay,
-                    'AutoRefresh' => $this->autoRefresh,
-                    'GridFieldID' => $gridField->ID());
+        $data = [
+            'RefreshDelay' => $this->refreshDelay,
+            'AutoRefresh' => $this->autoRefresh,
+            'GridFieldID' => $gridField->ID()
+        ];
 
         $forTemplate = new ArrayData($data);
-        $args = array(
+        $args = [
             'ID' => $gridField->ID(),
-        );
+        ];
 
-        return array(
+        return [
             $this->targetFragment => $forTemplate->renderWith('GridFieldAjaxRefresh_Header', $args)
-        );
+        ];
     }
 }

@@ -11,8 +11,18 @@
 		"email": "julian@silverstripe.com"
 	}
 	],
-	"require":
-	{
-		"silverstripe/framework": "^4.0"
+	"require": {
+		"silverstripe/framework": "^5"
+	},
+	"autoload": {
+        "psr-4": {
+            "Silverstripe\\GridfieldAjaxRefresh\\": "src/"
+        }
+    },
+	"config": {
+		"allow-plugins": {
+			"composer/installers": true,
+			"silverstripe/vendor-plugin": true
+		}
 	}
 }
