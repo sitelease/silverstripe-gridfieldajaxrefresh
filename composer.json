@@ -24,5 +24,10 @@
 			"composer/installers": true,
 			"silverstripe/vendor-plugin": true
 		}
-	}
+	},
+    "extra": {
+        "expose": [
+            "client/dist"
+        ]
+    }
 }
