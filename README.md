@@ -4,7 +4,7 @@ GridFieldAjaxRefresh
 Adds the ability to either automatically or manually refresh a SilverStripe GridField
 
 ## Requirements
-* SilverStripe 5.x
+* SilverStripe 4.x
 
 ## Installation
 ```bash
