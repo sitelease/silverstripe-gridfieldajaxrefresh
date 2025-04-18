@@ -1,2 +1,2 @@
 mappings:
-  GridFieldAjaxRefresh: Sitelease\GridfieldAjaxRefresh\Forms\GridField\GridFieldAjaxRefresh
+  GridFieldAjaxRefresh: Silverstripe\GridfieldAjaxRefresh\Forms\GridField\GridFieldAjaxRefresh
