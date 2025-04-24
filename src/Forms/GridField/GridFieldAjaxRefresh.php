@@ -61,7 +61,7 @@ class GridFieldAjaxRefresh implements GridField_HTMLProvider
         ];
 
         return [
-            $this->targetFragment => $forTemplate->renderWith('Silverstripe/GridfieldAjaxRefresh/Forms/GridField/GridFieldAjaxRefresh_Header', $args)
+            $this->targetFragment => $forTemplate->renderWith(GridFieldAjaxRefresh::class . '_Header', $args)
         ];
     }
 }
