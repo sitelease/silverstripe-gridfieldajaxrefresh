@@ -28,7 +28,7 @@ class GridFieldAjaxRefresh implements GridField_HTMLProvider
      * @param int $refreshDelay The Delay in milliseconds between refreshes
      * @param bool $autoRefresh True to enable automatic refresh, False to use manual refresh with a button
      */
-    public function __construct($refreshDelay = 1000, $autoRefresh = true, $targetFragment = 'before')
+    public function __construct($refreshDelay = 1000, $autoRefresh = true, $targetFragment = 'buttons-before-left')
     {
         $this->refreshDelay = $refreshDelay;
         $this->autoRefresh = $autoRefresh;
@@ -42,9 +42,6 @@ class GridFieldAjaxRefresh implements GridField_HTMLProvider
      */
     public function getHTMLFragments($gridField)
     {
-        Requirements::css(
-            'silverstripe/gridfieldajaxrefresh:client/dist/css/GridFieldAjaxRefresh.css'
-        );
         Requirements::javascript(
             'silverstripe/gridfieldajaxrefresh:client/dist/javascript/GridFieldAjaxRefresh.min.js'
         );

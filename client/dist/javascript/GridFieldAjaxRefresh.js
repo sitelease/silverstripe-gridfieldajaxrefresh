@@ -1,7 +1,7 @@
 (function($) {
 	$.entwine('ss', function($) {
 
-		$('.ss-gridfield .auto-refresh-button button').entwine({
+		$('.ss-gridfield .grid-refresh-button').entwine({
 			/**
 			 * Button to trigger a reload of the GridField. Full reload, with loading indicator
 			 */
